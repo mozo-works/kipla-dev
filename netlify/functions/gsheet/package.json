@@ -1,0 +1,10 @@
+{
+  "name": "gsheet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "google-spreadsheet": "^3.2.0"
+  }
+}
