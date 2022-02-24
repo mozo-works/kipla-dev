@@ -9,7 +9,7 @@
     <p>{{ $.name }}</p>
   </div>
   <div class="media-body">
-    <p><span>{{ $.org }}</span>{{ with $.tags }}
+    <p><span>{{ with $.org }}{{ . }}{{ else }}&nbsp;{{end}}</span>{{ with $.tags }}
     <span class="label label-info">{{ . }}</span>{{ end }}</p>
   </div>{{ end }}{{ with .url }}
   <div class="media-right">
