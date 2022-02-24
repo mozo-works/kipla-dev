@@ -1,0 +1,27 @@
+{{/*  executives @use {{ partial "executives.html" . }} */}}
+{{- $host := "https://kipla-dev.netlify.app" -}}
+{{- with getJSON (printf "%s/.netlify/functions/gsheet/executives-2022?v=%d" $host now.Unix) }}
+  {{ range $section := . }}
+    <section data-title="{{ $section.name }}" class="section">
+      {{ if eq "회장단" $section.name }}
+        <div class="row">
+          {{ range $person := $section.children }}
+          <div class="col-md-6">
+            <h2>{{ $person.title }}</h2>
+            {{ partial "person-card.html" $person }}
+          </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <h2>{{ $section.name }}</h2>
+        {{ $len :=len $section.children }}
+        {{- range $i, $person := $section.children }}{{ if modBool $i 2 }}<div class="row">{{ end }}
+        <div class="col-md-6">
+          {{ partial "person-card.html" $person }}
+        </div>
+        {{ if (or (not (modBool $i 2)) (eq (add $i 1) $len)) }}</div>{{ end }}
+        {{ end -}}
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end -}}

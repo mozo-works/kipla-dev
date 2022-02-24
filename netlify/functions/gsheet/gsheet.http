@@ -1,0 +1,7 @@
+### products
+# GET https://kipla-dev.netlify.app/.netlify/functions/gsheet/executives-2022
+GET http://localhost:8888/.netlify/functions/gsheet/executives-2022 HTTP/1.1
+content-type: application/json
+
+### page
+GET http://localhost:8888/executives HTTP/1.1

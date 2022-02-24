@@ -1,0 +1,14 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[dev]
+  command = "hugo server --noChmod --noHTTPCache -D -F"
+  functionsPort = 8889
+  targetPort = 1313
+
+[functions]
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"

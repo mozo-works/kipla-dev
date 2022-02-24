@@ -1,0 +1,1 @@
+{{/*  shortcodes/partial @desc use partial in content @use {{< partial "executives" >}} */}}{{- $partialPath := (.Get 0) -}}{{ if templates.Exists ( printf "partials/%s.html" $partialPath ) }}{{ partial $partialPath .Site }}{{ else }}{{ $partialPath }}{{ end }}

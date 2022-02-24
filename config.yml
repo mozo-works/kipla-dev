@@ -1,3 +1,11 @@
 baseURL: https://kipla-dev.netlify.app
-languageCode: ko-kr
 title: kipla-dev
+languageCode: ko-kr
+
+disableKinds:
+- home
+- section
+- taxonomy
+- taxonomyTerm
+- RSS
+- sitemap

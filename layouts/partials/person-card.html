@@ -1,0 +1,18 @@
+<div class="media featured">{{ with .image }}
+  <div class="media-left">
+    <img src="{{ . }}" alt="{{ $.name }}" class="img-responsive" />
+  </div>
+  <div class="media-body">
+    <p><span>{{ $.name }}</span><br /><span>{{ $.org }}</span></p>
+  </div>{{ else }}
+  <div class="media-left">
+    <p>{{ $.name }}</p>
+  </div>
+  <div class="media-body">
+    <p><span>{{ $.org }}</span>{{ with $.tags }}
+    <span class="label label-info">{{ . }}</span>{{ end }}</p>
+  </div>{{ end }}{{ with .url }}
+  <div class="media-right">
+    <p class="text-center"><a target="_blank" href="{{ . }}"> > </a></p>
+  </div>{{ end }}
+</div>

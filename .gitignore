@@ -1,6 +1,7 @@
 /public
 node_modules
 /resources
+*.lock
 
 # Local Netlify folder
 .netlify
